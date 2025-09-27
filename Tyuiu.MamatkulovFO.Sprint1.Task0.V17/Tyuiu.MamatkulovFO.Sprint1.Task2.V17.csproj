@@ -1,0 +1,5 @@
+﻿  <ItemGroup>
+    <ProjectReference Include="..\Tyuiu.MamatkulovFO.Sprint1.Task2.V17.Lib\Tyuiu.MamatkulovFO.Sprint1.Task2.V17.Lib.csproj" />
+  </ItemGroup>
+
+</Project>
