@@ -1,25 +1,29 @@
 ﻿using Tyuiu.MamatkulovFO.Sprint1.Task7.V15.Lib;
 namespace Tyuiu.MamatkulovFO.Sprint1.Task7.V15;
 
+
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.Write("x = ");
+            Console.Write("Введите x: ");
             double x = Convert.ToDouble(Console.ReadLine());
 
-            Console.Write("y = ");
-            double y = Convert.ToDouble(Console.ReadLine());
-
-            double result = Calculator.Calculate(x, y);
-            Console.WriteLine($"Результат: {result:F3}");
+            try
+            {
+                double result = Calculator.Calculate(x);
+                Console.WriteLine($"Результат: {result:F3}");
+            }
+            catch (System.ArgumentException ex)
+            {
+                Console.WriteLine($"Ошибка: {ex.Message}");
+            }
         }
-
-    private class Calculator
+    }
+internal class Calculator
+{
+    internal static double Calculate(double x)
     {
-        internal static double Calculate(double x, double y)
-        {
-            throw new NotImplementedException();
-        }
+        throw new NotImplementedException();
     }
 }
