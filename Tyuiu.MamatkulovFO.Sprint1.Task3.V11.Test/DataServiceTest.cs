@@ -2,10 +2,19 @@
 namespace Tyuiu.MamatkulovFO.Sprint1.Task3.V11.Test;
 
 
-public class TriangleTests
+
+
+public class DataServiceTest
 {
+    private readonly DataService _service;
+
+    public DataServiceTest()
+    {
+        _service = new DataService();
+    }
+
     [Fact]
-    public void CalculateArea_ValidCoordinates_ReturnsCorrectRoundedArea()
+    public void CalculateTriangleArea_ValidCoordinates_ReturnsCorrectRoundedArea()
     {
         // Arrange
         double x1 = -2, y1 = 5;
@@ -13,27 +22,33 @@ public class TriangleTests
         double x3 = 5, y3 = -3;
 
         double expected = 19.0;
-        
+
         // Act
-        double actual = Triangle.CalculateArea(x1, y1, x2, y2, x3, y3);
+        double actual = _service.CalculateTriangleArea(x1, y1, x2, y2, x3, y3);
 
         // Assert
         Assert.AreEqual(expected, actual);
     }
 
     [Fact]
-    public void CalculateArea_ZeroAreaTriangle_ReturnsZero()
+    public void CalculateTriangleArea_CollinearPoints_ReturnsZero()
     {
-        // Три коллинеарные точки
-        double area = Triangle.CalculateArea(0, 0, 1, 1, 2, 2);
+        double area = _service.CalculateTriangleArea(0, 0, 1, 1, 2, 2);
         Assert.AreEqual(0.0, area);
     }
 
     [Fact]
-    public void CalculateArea_NegativeCoordinates_ReturnsPositiveArea()
+    public void CalculateTriangleArea_NegativeCoordinates_ReturnsPositiveArea()
     {
-        double area = Triangle.CalculateArea(-1, -1, -2, -3, -4, -1);
-        Assert.IsTrue(area > 0);
-        Assert.AreEqual(3.0, area); // Проверка вручную: |(-1*(-3+1) + -2*(-1+1) + -4*(-1+3))/2| = |(2 + 0 -8)/2| = |-3| = 3
+        double area = _service.CalculateTriangleArea(-1, -1, -2, -3, -4, -1);
+        Assert.AreEqual(3.0, area);
+    }
+
+    [Fact]
+    public void CalculateTriangleArea_RoundingToThreeDecimals_WorksCorrectly()
+    {
+        // Misol: yuz 12.34567 bo'lsa, 12.346 qaytishi kerak
+        double area = _service.CalculateTriangleArea(0, 0, 3, 0, 0, 8.2311); // yuza = (3*8.2311)/2 = 12.34665 → 12.347
+        Assert.AreEqual(12.347, area);
     }
 }
