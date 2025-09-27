@@ -7,6 +7,7 @@ namespace Tyuiu.MamatkulovFO.Sprint1.Task2.V17.Test
     {
         [Test]
         public void CheckedConvertMinutesToHours()
+            
         {
             DataService ds = new DataService();
             int minutes = 144;
