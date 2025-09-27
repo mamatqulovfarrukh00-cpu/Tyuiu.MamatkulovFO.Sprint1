@@ -4,12 +4,18 @@ namespace Tyuiu.MamatkulovFO.Sprint1.Task2.V17.Lib;
 
 
 
-    public class DataService : ISprint1Task2V18
+    public class DataService : ISprint1Task2V17
     {
         public int CalculateSideSquareParallelepiped(int value, int valueTwo, int valueThree)
         {
             int S = 2 * (value + valueTwo) * valueThree;
             return S;
         }
+
+    int ISprint1Task2V17.ConvertMinutesToHours(int value)
+    {
+        throw new NotImplementedException();
     }
+}
+
 

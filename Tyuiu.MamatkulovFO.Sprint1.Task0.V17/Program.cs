@@ -1,5 +1,5 @@
 ﻿using Tyuiu.MamatkulovFO.Sprint1.Task2.V17.Lib;
-using Tyuiu.MamatkulovFO.Sprint1.Task2.V17.Lib.TimeLibrary;
+using Tyuiu.MamatkulovFO.Sprint1.Task2.V17.Lib;
 namespace Tyuiu.MamatkulovFO.Sprint1.Task2.V17.System;
 
 
