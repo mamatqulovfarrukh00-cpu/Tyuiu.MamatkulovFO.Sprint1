@@ -6,21 +6,13 @@
 
 using System.CodeDom.Compiler;
 using Tyuiu.MamatkulovFO.Sprint1.Task2.V17.Lib;
-namespace Tyuiu.MamatkulovFO.Sprint1.Task2.V17.Test
-{
-    [TestClass]
-    public sealed class DataServiceTest
+namespace Tyuiu.MamatkulovFO.Sprint1.Task2.V17.Test;
+
+
+    public class DataService
     {
-        [TestMethod]
-        public void CheckedCalculateSideSquareParallelepiped()
+        public static Int32 CalculateSideSquareParallelepiped(Int32 length, Int32 width, Int32 height)
         {
-            DataService ds = new DataService();
-            int valueOne = 4;
-            int valueTwo = 8;
-            int valueThree = 6;
-            var res = ds.CalculateSideSquareParallelepiped(valueOne, valueTwo, valueThree);
-            int wait = 144;
-            Assert.AreEqual(res, wait);
+            return 2 * (length * height + width * height);
         }
     }
-}
