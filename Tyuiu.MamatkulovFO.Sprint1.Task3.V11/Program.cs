@@ -4,6 +4,8 @@ class Program
 {
     static void Main()
     {
+        var service = new DataService();
+
         Console.WriteLine("Введите координаты углов (числа разделяйте пробелом):\n");
 
         Console.Write("x1 -> ");
@@ -24,9 +26,8 @@ class Program
         Console.Write("y3 -> ");
         double y3 = double.Parse(Console.ReadLine()!);
 
-        double area = Triangle.CalculateArea(x1, y1, x2, y2, x3, y3);
+        double area = service.TriangleArea(x1, y1, x2, y2, x3, y3);
 
-        Console.WriteLine($"\nПлощадь треугольника: {area} кв.см");
+        Console.WriteLine($"\nПлощадь треугольника: {area:F3} кв.см");
     }
 }
-  
